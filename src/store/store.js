@@ -23,14 +23,12 @@ const store = new Vuex.Store({
       state.shoplist = o
     },
     updateShopItem(state, payload) {
-      console.log(payload)
       let arr = [];
       payload.map(val=>{
         if(val.title){
           arr.push(val)
         }
       })
-      console.log(arr)
       state.shopItem = arr
     },
     // updaShopList(state,payload){

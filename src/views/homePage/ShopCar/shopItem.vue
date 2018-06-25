@@ -48,6 +48,9 @@ export default {
                     name: this.datas.title,
                     price: n ? this.datas.count * this.datas.priceWithRate : 0
                 })
+            bus.$emit("input",{
+                Item : n ? this.datas : false
+            })
         },
         datas(n, o) {
             bus.$emit("checkItem",

@@ -1,5 +1,8 @@
 <template>
     <div>
+        <header>
+            <span @click="editClick">编辑</span>
+        </header>
         <h2 v-show="flag">购物车中还没有内容,快去添加吧</h2>
         <ul>
             <ShopItem v-for="(item,ind) in shopItem" :key='ind' :datas='item'></ShopItem>
@@ -28,7 +31,8 @@ export default {
             total: 0,
             type: '结算',
             list: [],
-            data: []
+            data: [],
+            Item: []
         }
     },
     computed: {
@@ -50,21 +54,21 @@ export default {
                         from: 'shopcar'
                     }
                 })
-            }else if(res.code === 1){
+            } else if (res.code === 1) {
                 this.$store.dispatch('fetchshops', res.msg);
-                console.log(res.msg)
-                if(res.msg){
-                    this.flag=false
-                    // console.log(1)
-                }else{
-                    this.flag=true
-                    // console.log(2)
+                if (res.msg) {
+                    this.flag = false
+                } else {
+                    this.flag = true
                 }
             }
         });
         bus.$on("checkItem", (res) => {
             this.list[res.name] = res.price
             this.sum();
+        }); 
+        bus.$on('input', (res) => {
+            this.Item.push(res.Item)
         })
     },
     components: {
@@ -83,6 +87,10 @@ export default {
         },
         btnClick() {
 
+            console.log(this.Item)
+        },
+        editClick() {
+            this.type = "删除"
         }
     }
 }
@@ -138,8 +146,9 @@ ul {
     border: 1px solid #ccc;
     position: absolute;
     right: 0;
-    top: 0;
+    top: -1rem;
     background: red;
-    color: #fff
+    color: #fff;
+    z-index: 5;
 }
 </style>

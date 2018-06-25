@@ -7,8 +7,9 @@
             <p>{{data.title}}</p>
             <span style="color:red;float:left">{{data.priceShow.unit}}{{data.priceShow.price}}</span>
             <span>{{data.sold}}人已付款</span>
-            <b class="icon iconfont icon-gouwuche" style="color:red;float:right" @click="()=>{shopClick(data)}"></b>
+            <b class="icon iconfont icon-gouwuche" style="color:red;float:right" @click="shopClick"></b>
         </dd>
+        <Toast ref='toas'></Toast>
     </dl>
 </template>
 
@@ -35,6 +36,7 @@ export default {
         },
         shopClick() {
            this.$store.dispatch('fetchshops',this.data)
+           this.$refs.toas.active('添加成功')
         }
     }
 }

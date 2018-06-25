@@ -2,8 +2,8 @@
     <div class="warp">
         <div>
             <header class="header">
-                <i class="icon iconfont icon-shezhi"></i>
-                <span>我的717商城</span>
+                <i class="icon iconfont icon-shezhi" @click="DClick"></i>
+                <span @click="UClick">我的717商城</span>
                 <i class="icon iconfont icon-xiaoxi"></i>
             </header>
             <div class="top">
@@ -65,16 +65,27 @@
                 </router-link>
             </ul>
         </div>
+        <Toast ref='toa'></Toast>
+        <Delog ref='delog'></Delog>
     </div>
 </template>
 
 <script>
 import { getCookie, bus } from '@/utils/cookie.js';
+
 export default {
     name: 'my',
     data() {
         return {
 
+        }
+    },
+    methods:{
+        DClick(){
+            this.$refs.toa.active('确定修改')
+        },
+        UClick(){
+            this.$refs.delog.active('','是否却确认','home')
         }
     },
     mounted() {
