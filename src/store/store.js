@@ -13,7 +13,7 @@ const store = new Vuex.Store({
   state: {
     shoplist: {},
     shopItem: [],
-    //ShopList:[]
+    addAddress:[]
   },
   mutations: {
     updateList(state, payload) {
@@ -31,9 +31,10 @@ const store = new Vuex.Store({
       })
       state.shopItem = arr
     },
-    // updaShopList(state,payload){
-    //   state.ShopList = payload
-    // }
+    updateAddAddress(state,payload){
+      console.log(payload)
+      state.addAddress.push(payload)
+    }
   },
   actions: {
     fetchList({

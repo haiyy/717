@@ -20,43 +20,43 @@
                 <i class="icon iconfont icon-youjiantou-01"></i>
             </div>
             <ul class="order">
-                <router-link to="" tag="li">
+                <router-link to="/money" tag="li">
                     <i class="icon iconfont icon-qiaquan"></i>
                     <span>待付款</span>
                 </router-link>
-                <router-link to="" tag="li">
+                <router-link to="/allMsg" tag="li">
                     <i class="icon iconfont icon-daishouhuo-01"></i>
                     <span>待收货</span>
                 </router-link>
-                <router-link to="" tag="li">
+                <router-link to="/allStatus" tag="li">
                     <i class="icon iconfont icon-faxiandingdan"></i>
                     <span>代发货</span>
                 </router-link>
-                <router-link to="" tag="li">
+                <router-link to="/customer" tag="li">
                     <i class="icon iconfont icon-kefu"></i>
                     <span>售后</span>
                 </router-link>
-                <router-link to="" tag="li">
+                <router-link to="/set" tag="li">
                     <i class="icon iconfont icon-wodedingdan"></i>
                     <span>我的订单</span>
                 </router-link>
             </ul>
             <ul class="list">
-                <router-link to="" tag="li">
+                <router-link to="/balance" tag="li">
                     <p>
                         <i class="icon iconfont icon-zhifu-01"></i>
                         <span>账号余额</span>
                     </p>
                     <i class="icon iconfont icon-webicon213"></i>
                 </router-link>
-                <router-link to="" tag="li">
+                <router-link to="/addAddre" tag="li">
                     <p>
                         <i class="icon iconfont icon-dizhi-01"></i>
                         <span>地址管理</span>
                     </p>
                     <i class="icon iconfont icon-webicon213"></i>
                 </router-link>
-                <router-link to="" tag="li">
+                <router-link to="/service" tag="li">
                     <p>
                         <i class="icon iconfont icon-kefu"></i>
                         <span>我的客服</span>

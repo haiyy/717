@@ -7,8 +7,17 @@ import ShopCar from '../views/homePage/ShopCar/shopCar.vue';
 import Index from '../views/homePage/Index/index.vue';
 import Search from '../views/Search/search.vue';
 import ListItem from '../components/listItem.vue';
-import Login from '../views/Login/login.vue'
-import Register from '../views/Register/register.vue'
+import Login from '../views/Login/login.vue';
+import Register from '../views/Register/register.vue';
+import Address from '@/views/homePage/My/address.vue';
+import AllMsg from '@/views/homePage/My/allMsg.vue';
+import AllStatus from '@/views/homePage/My/allStatus.vue';
+import Money from '@/views/homePage/My/money';
+import Service from '@/views/homePage/My/service';
+import Set from '@/views/homePage/My/set.vue';
+import Balance from '@/views/homePage/My/balance.vue';
+import Customer from '@/views/homePage/My/customer.vue';
+import AddAddre from "@/views/homePage/My/addAddre.vue";
 import {
   getCookie
 } from '@/utils/cookie.js';
@@ -57,6 +66,38 @@ let router = new Router({
     path: "/listItem",
     name: "listItem",
     component: ListItem
+  },{
+    path:"/address",
+    name:"address",
+    component:Address
+  },{
+    path:"/allMsg",
+    name:"allMsg",
+    component:AllMsg
+  },{
+    path:"/allStatus",
+    name:"allStatus",
+    component:AllStatus
+  },{
+    path:"/money",
+    name:"money",
+    component:Money
+  },{
+    path:"/service",
+    name:"service",
+    component:Service
+  },{
+    path:"/set",
+    name:"set",
+    component:Set
+  },{
+    path:"/balance",
+    name:"balance",
+    component:Balance
+  },{
+    path:"/addAddre",
+    name:"addAddre",
+    component:AddAddre
   }]
 })
 router.beforeEach((to, from, next) => {
@@ -69,6 +110,7 @@ router.beforeEach((to, from, next) => {
           from: to.name || 'home'
         }
       })
+      alert("请先登陆")
     } else {
       next()
     }
